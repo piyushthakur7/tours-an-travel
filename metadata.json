@@ -1,0 +1,5 @@
+{
+  "name": "Kashmir Sinthan Top Tour & Travel",
+  "description": "Premium tourism services for Kashmir and Ladakh, offering customized packages, luxury houseboats, and local expertise.",
+  "requestFramePermissions": ["geolocation"]
+}
