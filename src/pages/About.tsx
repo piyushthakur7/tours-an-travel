@@ -55,7 +55,7 @@ export const About = () => {
             <p className="text-ink/70 text-lg font-light leading-relaxed mb-12">
               Based in the serene village of Dessu, Daksum, we operate at the gateway to Sinthan Top, offering access to offbeat locations that most tourists never see.
             </p>
-            <div className="grid grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-white p-6 rounded-3xl shadow-sm border border-black/5 hover:border-gold/30 transition-colors">
                 <h4 className="serif text-xl mb-2 italic text-gold">Authenticity</h4>
                 <p className="text-sm text-ink/70">Real local connections and stories that bring the culture to life.</p>

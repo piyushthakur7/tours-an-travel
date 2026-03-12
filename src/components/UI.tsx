@@ -30,7 +30,7 @@ export const PageHeader = ({ title, subtitle, bgImage }: { title: string, subtit
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
          >
            <MicroLabel className="text-gold/80">{subtitle}</MicroLabel>
-           <h1 className="serif text-5xl md:text-7xl lg:text-8xl text-white font-light mb-6">
+           <h1 className="serif text-5xl md:text-7xl lg:text-8xl text-white font-light mb-6 leading-tight md:leading-tight">
              {title}
            </h1>
          </motion.div>
@@ -49,10 +49,10 @@ export const SectionTitle = ({ title, subtitle, light = false }: { title: string
 );
 
 export const PackageCard = ({ image, title, price, duration, size = "small" }: { image: string, title: string, price: string, duration: string, size?: "small" | "large" }) => (
-  <Link to="/contact">
+  <Link to="/contact" className={size === "large" ? 'md:col-span-2 md:row-span-2' : ''}>
     <motion.div
       whileHover={{ y: -10 }}
-      className={`relative group overflow-hidden rounded-[2.5rem] bg-ink h-full ${size === "large" ? 'lg:col-span-2 lg:row-span-2' : ''}`}
+      className={`relative group overflow-hidden rounded-[2.5rem] bg-ink h-full min-h-[300px]`}
     >
       <img
         src={image}

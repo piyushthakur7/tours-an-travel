@@ -27,32 +27,32 @@ export const Contact = () => {
             <p className="text-white/60 text-lg font-light mb-12 max-w-md leading-relaxed">
                Whether you want to explore the valleys or scale the peaks, our local experts are here to craft the perfect itinerary for you.
             </p>
-            <div className="space-y-12">
-              <div className="flex gap-8 items-start group">
-                <div className="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-ink transition-all">
+            <div className="space-y-8 md:space-y-12">
+              <div className="flex gap-6 md:gap-8 items-start group">
+                <div className="w-12 h-12 md:w-14 md:h-14 shrink-0 rounded-full border border-white/20 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-ink transition-all">
                   <Phone size={20} />
                 </div>
                 <div>
                   <MicroLabel className="mb-1 text-white/40">Direct Line</MicroLabel>
-                  <p className="serif text-3xl hover:text-gold transition-colors cursor-pointer">+91 9797125922</p>
+                  <p className="serif text-2xl md:text-3xl hover:text-gold transition-colors cursor-pointer break-all">+91 9797125922</p>
                 </div>
               </div>
-              <div className="flex gap-8 items-start group">
-                <div className="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-ink transition-all">
+              <div className="flex gap-6 md:gap-8 items-start group">
+                <div className="w-12 h-12 md:w-14 md:h-14 shrink-0 rounded-full border border-white/20 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-ink transition-all">
                   <Mail size={20} />
                 </div>
                 <div>
                   <MicroLabel className="mb-1 text-white/40">Email Address</MicroLabel>
-                  <p className="serif text-2xl hover:text-gold transition-colors cursor-pointer">kashmirsinthan@gmail.com</p>
+                  <p className="serif text-xl md:text-2xl hover:text-gold transition-colors cursor-pointer break-all">kashmirsinthan@gmail.com</p>
                 </div>
               </div>
-              <div className="flex gap-8 items-start group">
-                <div className="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-ink transition-all">
+              <div className="flex gap-6 md:gap-8 items-start group">
+                <div className="w-12 h-12 md:w-14 md:h-14 shrink-0 rounded-full border border-white/20 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-ink transition-all">
                   <MapPin size={20} />
                 </div>
                 <div>
                   <MicroLabel className="mb-1 text-white/40">Headquarters</MicroLabel>
-                  <p className="serif text-2xl">Dessu, Daksum, Anantnag, J&K</p>
+                  <p className="serif text-xl md:text-2xl">Dessu, Daksum, Anantnag, J&K</p>
                 </div>
               </div>
             </div>
@@ -62,7 +62,7 @@ export const Contact = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-white/5 backdrop-blur-3xl p-12 rounded-[3rem] border border-white/10 shadow-2xl relative overflow-hidden"
+            className="bg-white/5 backdrop-blur-3xl p-8 md:p-12 rounded-[2rem] md:rounded-[3rem] border border-white/10 shadow-2xl relative overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-64 h-64 bg-gold rounded-full -z-10 blur-[100px] opacity-10"></div>
             <form className="space-y-10" onSubmit={(e) => e.preventDefault()}>
