@@ -89,9 +89,28 @@ export const Contact = () => {
                 <MicroLabel className="text-white/40">Message</MicroLabel>
                 <textarea rows={4} className="w-full bg-transparent border-b border-white/20 pb-3 focus:border-gold outline-none transition-colors resize-none text-lg" placeholder="Tell us about your dream trip..."></textarea>
               </div>
-              <button className="w-full py-5 bg-gold text-white rounded-full font-bold uppercase tracking-widest text-sm hover:bg-white hover:text-ink transition-all duration-500 shadow-2xl shadow-gold/20 flex items-center justify-center gap-3">
-                Send Inquiry <ArrowRight size={18} />
-              </button>
+              <div className="flex flex-col xl:flex-row gap-4">
+                <button className="flex-1 py-4 bg-gold text-white rounded-full font-bold uppercase tracking-widest text-[13px] hover:bg-white hover:text-ink transition-all duration-500 shadow-2xl shadow-gold/20 flex items-center justify-center gap-2">
+                  Submit <ArrowRight size={16} />
+                </button>
+                <div className="flex flex-col sm:flex-row gap-4 flex-[2]">
+                  <a 
+                    href="https://wa.me/918054444069" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex-1 py-4 bg-[#25D366] text-white rounded-full font-bold uppercase tracking-widest text-[13px] hover:bg-white hover:text-[#25D366] transition-all duration-500 shadow-2xl shadow-[#25D366]/20 flex items-center justify-center gap-2 px-2"
+                  >
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                    WhatsApp
+                  </a>
+                  <a 
+                    href="tel:+918054444069" 
+                    className="flex-1 py-4 bg-ink text-white border border-white/20 rounded-full font-bold uppercase tracking-widest text-[13px] hover:bg-gold hover:border-gold transition-all duration-500 shadow-2xl flex items-center justify-center gap-2 px-2"
+                  >
+                    <Phone size={16} /> Call Us
+                  </a>
+                </div>
+              </div>
             </form>
           </motion.div>
         </div>
