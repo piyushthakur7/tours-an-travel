@@ -8,8 +8,9 @@ export const About = () => {
       <PageHeader 
         title="The Legacy" 
         subtitle="Our Story" 
-        bgImage="https://images.unsplash.com/photo-1598324789736-4861f89564a0?q=80&w=2070&auto=format&fit=crop"
+        bgImage="/WhatsApp Image 2026-03-11 at 4.04.14 PM.jpeg"
       />
+
 
       <div className="max-w-7xl mx-auto px-6 py-32">
         <div className="grid lg:grid-cols-2 gap-24 items-center">
@@ -21,11 +22,11 @@ export const About = () => {
               className="relative z-10 rounded-[3rem] overflow-hidden aspect-[4/5] shadow-2xl"
             >
               <img
-                src="https://images.unsplash.com/photo-1566232392379-afd9298e6a46?q=80&w=2070&auto=format&fit=crop"
+                src="/WhatsApp Image 2026-03-12 at 4.27.13 PM (1).jpeg"
                 alt="Kashmir"
                 className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
               />
+
             </motion.div>
             <div className="absolute -bottom-12 -right-12 w-64 h-64 bg-gold rounded-full -z-10 blur-3xl opacity-20"></div>
             <motion.div

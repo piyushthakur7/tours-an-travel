@@ -57,11 +57,11 @@ export const Home = () => {
                 className="relative aspect-[3/4] rounded-full overflow-hidden border border-white/10 p-2"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1566232392379-afd9298e6a46?q=80&w=2070&auto=format&fit=crop"
+                  src="/WhatsApp Image 2026-03-12 at 4.27.13 PM (1).jpeg"
                   alt="Culture"
                   className="w-full h-full object-cover rounded-full"
-                  referrerPolicy="no-referrer"
                 />
+
               </motion.div>
             </div>
           </div>
@@ -89,23 +89,26 @@ export const Home = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[300px]">
           <PackageCard 
             size="large"
-            image="https://images.unsplash.com/photo-1598324789736-4861f89564a0?q=80&w=2070&auto=format&fit=crop"
+            image="/WhatsApp Image 2026-03-11 at 4.04.14 PM.jpeg"
             title="Kashmir Valley Wonders"
             duration="5 Days / 4 Nights"
             price="₹15,000"
           />
+
           <PackageCard 
-            image="https://images.unsplash.com/photo-1544161515-436cefd1f16d?q=80&w=2070&auto=format&fit=crop"
-            title="Ladakh Adventure"
+            image="/WhatsApp Image 2026-03-11 at 4.34.50 PM.jpeg"
+            title="Pahalgam Adventure"
             duration="7 Days"
             price="₹25,000"
           />
+
           <PackageCard 
-            image="https://images.unsplash.com/photo-1624314138470-5a2f24623f10?q=80&w=2070&auto=format&fit=crop"
+            image="/WhatsApp Image 2026-03-12 at 4.27.14 PM.jpeg"
             title="Sinthan Top Special"
             duration="4 Days"
             price="₹12,000"
           />
+
         </div>
         <div className="mt-16 flex justify-center">
           <Link to="/packages" className="group flex items-center gap-4 text-ink hover:text-gold transition-colors">

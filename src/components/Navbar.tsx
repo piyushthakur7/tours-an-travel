@@ -23,7 +23,9 @@ export const Navbar = () => {
     { name: 'Packages', path: '/packages' },
     { name: 'Services', path: '/services' },
     { name: 'About', path: '/about' },
+    { name: 'Gallery', path: '/gallery' },
     { name: 'Contact', path: '/contact' }
+
   ];
 
   return (

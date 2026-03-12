@@ -8,8 +8,9 @@ export const Packages = () => {
       <PageHeader 
         title="Destinations" 
         subtitle="Explore The Valley" 
-        bgImage="https://images.unsplash.com/photo-1624314138470-5a2f24623f10?q=80&w=2070&auto=format&fit=crop"
+        bgImage="/WhatsApp Image 2026-03-11 at 4.04.14 PM.jpeg"
       />
+
       
       <div className="max-w-7xl mx-auto px-6 py-32">
         <motion.div
@@ -26,42 +27,48 @@ export const Packages = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[300px]">
           <PackageCard 
             size="large"
-            image="https://images.unsplash.com/photo-1598324789736-4861f89564a0?q=80&w=2070&auto=format&fit=crop"
+            image="/WhatsApp Image 2026-03-11 at 4.04.14 PM.jpeg"
             title="Kashmir Valley Wonders"
             duration="5 Days / 4 Nights"
             price="₹15,000"
           />
+
           <PackageCard 
-            image="https://images.unsplash.com/photo-1544161515-436cefd1f16d?q=80&w=2070&auto=format&fit=crop"
-            title="Ladakh Adventure"
+            image="/WhatsApp Image 2026-03-11 at 4.34.50 PM.jpeg"
+            title="Pahalgam Adventure"
             duration="7 Days"
             price="₹25,000"
           />
+
           <PackageCard 
-            image="https://images.unsplash.com/photo-1624314138470-5a2f24623f10?q=80&w=2070&auto=format&fit=crop"
+            image="/WhatsApp Image 2026-03-12 at 4.27.14 PM.jpeg"
             title="Sinthan Top Special"
             duration="4 Days"
             price="₹12,000"
           />
+
           <PackageCard 
-            image="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?q=80&w=2070&auto=format&fit=crop"
+            image="/WhatsApp Image 2026-03-11 at 4.04.13 PM.jpeg"
             title="Gulmarg Skiing"
             duration="3 Days"
             price="₹18,000"
           />
+
           <PackageCard 
             size="large"
-            image="https://images.unsplash.com/photo-1566232392379-afd9298e6a46?q=80&w=2070&auto=format&fit=crop"
+            image="/WhatsApp Image 2026-03-12 at 4.27.13 PM.jpeg"
             title="Pahalgam Retreat"
             duration="4 Days / 3 Nights"
             price="₹14,500"
           />
+
           <PackageCard 
-            image="https://images.unsplash.com/photo-1605649487212-4d4ce3a223f6?q=80&w=2070&auto=format&fit=crop"
+            image="/WhatsApp Image 2026-03-12 at 4.27.10 PM.jpeg"
             title="Sonamarg Trek"
             duration="2 Days"
             price="₹8,000"
           />
+
         </div>
       </div>
     </div>
