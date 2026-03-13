@@ -55,8 +55,11 @@ export const Footer = () => {
         </div>
         
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-xs text-white/40 font-light">
-          <p>&copy; {new Date().getFullYear()} Kashmir Sinthan Top Tour & Travel. All rights reserved.</p>
-          <div className="flex gap-4 mt-4 md:mt-0">
+          <div className="text-center md:text-left mb-4 md:mb-0">
+            <p>&copy; {new Date().getFullYear()} Kashmir Sinthan Top Tour & Travel. All rights reserved.</p>
+            <p className="mt-1">Developed by <a href="https://www.webtotalsolution.com/" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">Web Total Solution</a></p>
+          </div>
+          <div className="flex gap-4">
             <a href="#" className="hover:text-gold transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-gold transition-colors">Terms of Service</a>
           </div>
