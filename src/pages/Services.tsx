@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Hotel, Car, Camera, ShieldCheck } from 'lucide-react';
+import { Hotel, Car, Camera, ShieldCheck, Anchor, Globe } from 'lucide-react';
 import { SectionTitle, ServiceItem, PageHeader } from '../components/UI';
 
 export const Services = () => {
@@ -42,18 +42,28 @@ export const Services = () => {
             >
               <ServiceItem 
                 icon={Car} 
-                title="Private Transportation" 
+                title="Transportation" 
                 desc="A fleet of luxury SUVs and comfortable sedans driven by experienced mountain pilots. We ensure safety on every sharp bend."
               />
               <ServiceItem 
                 icon={Hotel} 
-                title="Boutique Stays" 
-                desc="Carefully curated hotels that blend Kashmiri hospitality with modern luxury. Wake up to the best views."
+                title="Hotel & Houseboat Booking" 
+                desc="Carefully curated hotels and traditional luxury houseboats that blend Kashmiri hospitality with modern luxury."
               />
               <ServiceItem 
                 icon={Camera} 
-                title="Photography Expeditions" 
-                desc="Specialized tours for capturing the ethereal light and landscapes of the valley with local experts."
+                title="Photography & Videography" 
+                desc="Professional pre-wedding cinematography and photography expeditions to capture your special moments in the valley."
+              />
+              <ServiceItem 
+                icon={Anchor} 
+                title="Shikara Rides" 
+                desc="Experience the tranquil beauty of Dal Lake and Nigeen Lake with our curated private Shikara tours."
+              />
+              <ServiceItem 
+                icon={Globe} 
+                title="Complete Tour Packages" 
+                desc="All-inclusive tour packages covering Kashmir and Ladakh, designed for a hassle-free and immersive experience."
               />
             </motion.div>
           </div>

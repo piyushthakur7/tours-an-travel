@@ -27,10 +27,18 @@ export const Packages = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[300px]">
           <PackageCard 
             size="large"
+            image="https://images.unsplash.com/photo-1581791534721-e599df4417f7?q=80&w=2070&auto=format&fit=crop"
+            title="Ladakh Adventure"
+            duration="10 Days / 9 Nights"
+            price="₹45,000"
+          />
+          
+          <PackageCard 
+            size="large"
             image="/WhatsApp Image 2026-03-11 at 4.04.14 PM.jpeg"
-            title="Kashmir Valley Wonders"
-            duration="5 Days / 4 Nights"
-            price="₹15,000"
+            title="Kashmir Eternal Beauty"
+            duration="6 Days / 5 Nights"
+            price="₹18,500"
           />
 
           <PackageCard 
@@ -55,15 +63,7 @@ export const Packages = () => {
           />
 
           <PackageCard 
-            size="large"
             image="/WhatsApp Image 2026-03-12 at 4.27.13 PM.jpeg"
-            title="Pahalgam Retreat"
-            duration="4 Days / 3 Nights"
-            price="₹14,500"
-          />
-
-          <PackageCard 
-            image="/WhatsApp Image 2026-03-12 at 4.27.10 PM.jpeg"
             title="Sonamarg Trek"
             duration="2 Days"
             price="₹8,000"

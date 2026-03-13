@@ -35,7 +35,7 @@ export const Navbar = () => {
           <Link to="/" className="flex items-center gap-3">
             <Mountain size={22} className={scrolled ? 'text-gold' : 'text-white'} />
             <span className={`serif text-xl font-medium tracking-tight ${scrolled ? 'text-ink' : 'text-white'}`}>
-              Kashmir Sinthan
+              Kashmir Sinthan Top
             </span>
           </Link>
           

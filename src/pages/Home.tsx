@@ -36,7 +36,7 @@ export const Home = () => {
                   <span className="italic text-gold">Kashmir</span>
                 </h1>
                 <p className="text-white/60 text-lg md:text-xl max-w-xl font-light leading-relaxed mb-12">
-                  Experience the breathtaking landscapes of the Himalayas through the eyes of those who call it home. We make it truly unforgettable.
+                  Complete Kashmir & Ladakh tour packages. From transportation and luxury houseboats to professional pre-wedding cinematography, we make your journey truly unforgettable.
                 </p>
                 <div className="flex flex-wrap gap-6">
                   <Link to="/packages" className="group flex items-center gap-4 text-white">
@@ -115,6 +115,38 @@ export const Home = () => {
              <span className="text-sm font-bold uppercase tracking-widest border-b border-ink/20 group-hover:border-gold pb-1">View All Packages</span>
              <ArrowRight size={16} />
           </Link>
+        </div>
+      </section>
+
+      {/* Services Summary */}
+      <section className="py-24 bg-ink text-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+            <div>
+              <h3 className="serif text-2xl mb-4 text-gold">Tour Packages</h3>
+              <p className="text-white/60 text-sm font-light leading-relaxed">
+                Complete Kashmir & Ladakh packages including transportation, hotels, and houseboats.
+              </p>
+            </div>
+            <div>
+              <h3 className="serif text-2xl mb-4 text-gold">Stay & Ride</h3>
+              <p className="text-white/60 text-sm font-light leading-relaxed">
+                Premium hotel bookings, houseboats, and tranquil Shikara rides on the Dal Lake.
+              </p>
+            </div>
+            <div>
+              <h3 className="serif text-2xl mb-4 text-gold">Photography</h3>
+              <p className="text-white/60 text-sm font-light leading-relaxed">
+                Professional pre-wedding cinematography and photography to capture your memories.
+              </p>
+            </div>
+            <div>
+              <h3 className="serif text-2xl mb-4 text-gold">Local Guidance</h3>
+              <p className="text-white/60 text-sm font-light leading-relaxed">
+                Expert local guides and specialized tours to Sinthan Top and beyond.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </div>

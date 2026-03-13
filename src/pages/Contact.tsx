@@ -79,7 +79,8 @@ export const Contact = () => {
               <div className="space-y-3">
                 <MicroLabel className="text-white/40">Destination</MicroLabel>
                 <select className="w-full bg-transparent border-b border-white/20 pb-3 focus:border-gold outline-none transition-colors appearance-none text-lg">
-                  <option className="bg-ink text-white">Kashmir Valley Wonders</option>
+                  <option className="bg-ink text-white">Complete Tour Package</option>
+                  <option className="bg-ink text-white">Kashmir Eternal Beauty</option>
                   <option className="bg-ink text-white">Ladakh Adventure</option>
                   <option className="bg-ink text-white">Sinthan Top Special</option>
                   <option className="bg-ink text-white">Custom Itinerary</option>

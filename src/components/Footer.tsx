@@ -1,5 +1,5 @@
 import React from 'react';
-import { Instagram, Facebook, Youtube, Mountain } from 'lucide-react';
+import { Instagram, Facebook, Youtube, Mountain, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const Footer = () => {
@@ -11,7 +11,7 @@ export const Footer = () => {
             <Link to="/" className="flex items-center gap-3 mb-6">
               <Mountain size={28} className="text-gold" />
               <span className="serif text-2xl font-medium tracking-tight">
-                Kashmir Sinthan
+                Kashmir Sinthan Top
               </span>
             </Link>
             <p className="text-white/60 font-light max-w-sm mb-8 leading-relaxed">
@@ -23,6 +23,9 @@ export const Footer = () => {
               </a>
               <a href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold hover:border-gold hover:text-ink transition-all">
                 <Facebook size={18} />
+              </a>
+              <a href="https://wa.me/918054444069" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-[#25D366] hover:border-[#25D366] hover:text-white transition-all">
+                <MessageCircle size={18} />
               </a>
               <a href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold hover:border-gold hover:text-ink transition-all">
                 <Youtube size={18} />
