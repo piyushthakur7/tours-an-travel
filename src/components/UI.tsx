@@ -69,7 +69,7 @@ export const PackageCard = ({ image, title, price, duration, size = "small" }: {
           </Link>
           <div className="flex flex-col gap-2">
             <a 
-              href={`https://wa.me/918054444069?text=I'm interested in the ${title} package`}
+              href={`https://wa.me/919797125922?text=I'm interested in the ${title} package`}
               target="_blank"
               rel="noopener noreferrer"
               className="w-12 h-12 rounded-full bg-[#25D366] flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500"

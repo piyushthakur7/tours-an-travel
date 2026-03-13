@@ -24,7 +24,7 @@ export const Footer = () => {
               <a href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold hover:border-gold hover:text-ink transition-all">
                 <Facebook size={18} />
               </a>
-              <a href="https://wa.me/918054444069" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-[#25D366] hover:border-[#25D366] hover:text-white transition-all">
+              <a href="https://wa.me/919797125922" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-[#25D366] hover:border-[#25D366] hover:text-white transition-all">
                 <MessageCircle size={18} />
               </a>
               <a href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold hover:border-gold hover:text-ink transition-all">
@@ -37,6 +37,7 @@ export const Footer = () => {
             <h4 className="serif text-xl mb-6">Quick Links</h4>
             <ul className="space-y-4">
               <li><Link to="/packages" className="text-white/60 hover:text-gold transition-colors text-sm font-light">Destinations & Packages</Link></li>
+              <li><Link to="/hotels" className="text-white/60 hover:text-gold transition-colors text-sm font-light">Hotel Booking</Link></li>
               <li><Link to="/services" className="text-white/60 hover:text-gold transition-colors text-sm font-light">Our Services</Link></li>
               <li><Link to="/about" className="text-white/60 hover:text-gold transition-colors text-sm font-light">The Legacy</Link></li>
               <li><Link to="/contact" className="text-white/60 hover:text-gold transition-colors text-sm font-light">Contact Us</Link></li>

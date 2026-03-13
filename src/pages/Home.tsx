@@ -129,7 +129,7 @@ export const Home = () => {
               </p>
             </div>
             <div>
-              <h3 className="serif text-2xl mb-4 text-gold">Stay & Ride</h3>
+              <h3 className="serif text-2xl mb-4 text-gold underline md:no-underline decoration-gold/30"><Link to="/hotels" className="hover:underline transition-all">Hotel Booking</Link></h3>
               <p className="text-white/60 text-sm font-light leading-relaxed">
                 Premium hotel bookings, houseboats, and tranquil Shikara rides on the Dal Lake.
               </p>

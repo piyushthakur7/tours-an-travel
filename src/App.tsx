@@ -8,6 +8,7 @@ import { Services } from './pages/Services';
 import { About } from './pages/About';
 import { Contact } from './pages/Contact';
 import { Gallery } from './pages/Gallery';
+import { Hotels } from './pages/Hotels';
 
 
 const ScrollToTop = () => {
@@ -21,7 +22,7 @@ const ScrollToTop = () => {
 const FloatingContact = () => (
   <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-4">
     <a
-      href="tel:+918054444069"
+      href="tel:+919797125922"
       className="bg-gold text-white p-4 rounded-full shadow-[0_4px_14px_0_rgba(201,166,107,0.39)] hover:shadow-[0_6px_20px_rgba(201,166,107,0.23)] hover:-translate-y-1 transition-all duration-300"
       aria-label="Call Us"
     >
@@ -30,7 +31,7 @@ const FloatingContact = () => (
       </svg>
     </a>
     <a
-      href="https://wa.me/918054444069"
+      href="https://wa.me/919797125922"
       target="_blank"
       rel="noopener noreferrer"
       className="bg-[#25D366] text-white p-4 rounded-full shadow-[0_4px_14px_0_rgba(37,211,102,0.39)] hover:shadow-[0_6px_20px_rgba(37,211,102,0.23)] hover:-translate-y-1 transition-all duration-300"
@@ -57,6 +58,7 @@ export default function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/hotels" element={<Hotels />} />
             <Route path="/gallery" element={<Gallery />} />
 
           </Routes>

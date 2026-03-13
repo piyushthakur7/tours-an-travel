@@ -96,7 +96,7 @@ export const Contact = () => {
                 </button>
                 <div className="flex flex-col sm:flex-row gap-4 flex-[2]">
                   <a 
-                    href="https://wa.me/918054444069" 
+                    href="https://wa.me/919797125922" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex-1 py-4 bg-[#25D366] text-white rounded-full font-bold uppercase tracking-widest text-[13px] hover:bg-white hover:text-[#25D366] transition-all duration-500 shadow-2xl shadow-[#25D366]/20 flex items-center justify-center gap-2 px-2"
@@ -105,7 +105,7 @@ export const Contact = () => {
                     WhatsApp
                   </a>
                   <a 
-                    href="tel:+918054444069" 
+                    href="tel:+919797125922" 
                     className="flex-1 py-4 bg-ink text-white border border-white/20 rounded-full font-bold uppercase tracking-widest text-[13px] hover:bg-gold hover:border-gold transition-all duration-500 shadow-2xl flex items-center justify-center gap-2 px-2"
                   >
                     <Phone size={16} /> Call Us
