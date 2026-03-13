@@ -8,7 +8,7 @@ export const About = () => {
       <PageHeader 
         title="The Legacy" 
         subtitle="Our Story" 
-        bgImage="/WhatsApp Image 2026-03-11 at 4.04.14 PM.jpeg"
+        bgImage="/sinthan_top.png"
       />
 
 

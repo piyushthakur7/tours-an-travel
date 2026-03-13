@@ -89,26 +89,25 @@ export const Home = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[300px]">
           <PackageCard 
             size="large"
-            image="/WhatsApp Image 2026-03-11 at 4.04.14 PM.jpeg"
-            title="Kashmir Valley Wonders"
-            duration="5 Days / 4 Nights"
-            price="₹15,000"
+            image="/dal_lake.png"
+            title="Dal Lake Experience"
+            duration="1 Day Shikara & Stay"
+            price="₹4,500"
           />
 
           <PackageCard 
-            image="/WhatsApp Image 2026-03-11 at 4.34.50 PM.jpeg"
-            title="Pahalgam Adventure"
-            duration="7 Days"
-            price="₹25,000"
+            image="/sunmarg.png"
+            title="Sonamarg Valley"
+            duration="2 Days Tour"
+            price="₹8,500"
           />
 
           <PackageCard 
-            image="/WhatsApp Image 2026-03-12 at 4.27.14 PM.jpeg"
-            title="Sinthan Top Special"
-            duration="4 Days"
+            image="/sinthan_top.png"
+            title="Sinthan Top Adventure"
+            duration="3 Days / 2 Nights"
             price="₹12,000"
           />
-
         </div>
         <div className="mt-16 flex justify-center">
           <Link to="/packages" className="group flex items-center gap-4 text-ink hover:text-gold transition-colors">

@@ -93,42 +93,42 @@ export const Hotels = () => {
             name="Sinthan Heights Resort"
             location="Sinthan Top, Anantnag"
             price="₹5,500"
-            image="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=2070&auto=format&fit=crop"
+            image="/sinthan_top.png"
           />
           <HotelCard 
             type="Luxury Houseboat"
-            name="Royal Heritage Palace"
+            name="Heritage Palace Houseboat"
             location="Dal Lake, Srinagar"
             price="₹8,000"
-            image="https://images.unsplash.com/photo-1595111242333-8991a03f4438?q=80&w=2070&auto=format&fit=crop"
+            image="/dal_lake.png"
           />
           <HotelCard 
             type="Mountain Retreat"
             name="Pahalgam Pines View"
             location="Pahalgam"
             price="₹6,200"
-            image="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop"
+            image="/room_wooden.jpeg"
           />
           <HotelCard 
             type="Premium Hotel"
             name="Gulmarg Grand Hotel"
             location="Gulmarg"
             price="₹12,500"
-            image="https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=2070&auto=format&fit=crop"
+            image="/room_luxury.jpeg"
           />
           <HotelCard 
             type="Houseboat"
             name="Golden Tulip Houseboat"
             location="Nigeen Lake"
             price="₹6,500"
-            image="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=2070&auto=format&fit=crop"
+            image="/room_modern.jpeg"
           />
           <HotelCard 
             type="Boutique Stay"
-            name="The Orchard Retreat"
-            location="Srinagar Outside"
+            name="The Heritage Retreat"
+            location="Srinagar Heritage District"
             price="₹7,800"
-            image="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?q=80&w=2070&auto=format&fit=crop"
+            image="/heritage_winter.jpeg"
           />
         </div>
 

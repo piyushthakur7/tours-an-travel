@@ -8,7 +8,7 @@ export const Packages = () => {
       <PageHeader 
         title="Destinations" 
         subtitle="Explore The Valley" 
-        bgImage="/WhatsApp Image 2026-03-11 at 4.04.14 PM.jpeg"
+        bgImage="/sinthan_top.png"
       />
 
       
@@ -27,48 +27,33 @@ export const Packages = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[300px]">
           <PackageCard 
             size="large"
-            image="https://images.unsplash.com/photo-1581791534721-e599df4417f7?q=80&w=2070&auto=format&fit=crop"
-            title="Ladakh Adventure"
-            duration="10 Days / 9 Nights"
-            price="₹45,000"
+            image="/tulip_garden.png"
+            title="Tulip Garden Special"
+            duration="1 Day Heritage Tour"
+            price="₹2,500"
           />
           
           <PackageCard 
             size="large"
-            image="/WhatsApp Image 2026-03-11 at 4.04.14 PM.jpeg"
-            title="Kashmir Eternal Beauty"
-            duration="6 Days / 5 Nights"
-            price="₹18,500"
+            image="/sunmarg.png"
+            title="Sonamarg Valley (Sunmarg)"
+            duration="2 Days / 1 Night"
+            price="₹8,500"
           />
 
           <PackageCard 
-            image="/WhatsApp Image 2026-03-11 at 4.34.50 PM.jpeg"
-            title="Pahalgam Adventure"
-            duration="7 Days"
-            price="₹25,000"
+            image="/dal_lake.png"
+            title="Dal Lake Experience"
+            duration="1 Day Shikara & Stay"
+            price="₹4,500"
           />
 
           <PackageCard 
-            image="/WhatsApp Image 2026-03-12 at 4.27.14 PM.jpeg"
-            title="Sinthan Top Special"
-            duration="4 Days"
+            image="/sinthan_top.png"
+            title="Sinthan Top Adventure"
+            duration="3 Days / 2 Nights"
             price="₹12,000"
           />
-
-          <PackageCard 
-            image="/WhatsApp Image 2026-03-11 at 4.04.13 PM.jpeg"
-            title="Gulmarg Skiing"
-            duration="3 Days"
-            price="₹18,000"
-          />
-
-          <PackageCard 
-            image="/WhatsApp Image 2026-03-12 at 4.27.13 PM.jpeg"
-            title="Sonamarg Trek"
-            duration="2 Days"
-            price="₹8,000"
-          />
-
         </div>
       </div>
     </div>
