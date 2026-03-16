@@ -109,6 +109,102 @@ export const Services = () => {
             </Link>
           </div>
         </motion.div>
+
+        {/* Detailed Service Check - The Commitment */}
+        <div className="mt-40">
+           <div className="grid lg:grid-cols-2 gap-24 items-start">
+              <div>
+                 <div className="flex items-center gap-4 mb-8">
+                    <span className="w-12 h-[1px] bg-gold"></span>
+                    <MicroLabel className="text-gold mb-0">The Sinthan Standard</MicroLabel>
+                 </div>
+                 <h2 className="serif text-6xl md:text-8xl font-extralight text-ink mb-12 tracking-tight leading-[0.85]">
+                   Bespoke <br /><span className="italic text-gold">Service Details</span>
+                 </h2>
+                 <p className="text-ink/40 text-xl font-light leading-relaxed mb-16">
+                   Every journey with Kashmir Sinthan Top is a curated masterpiece. Here is how we ensure your Himalayan experience is flawless and extraordinary.
+                 </p>
+                 
+                 <div className="space-y-16">
+                    {[
+                       {
+                          num: "01",
+                          title: "Elite Fleet Logistics",
+                          points: [
+                             "Luxury 4x4 vehicles (Prado/Scorpio/Innova)",
+                             "Professional mountain-certified pilots",
+                             "24/7 on-road support and maintenance",
+                             "Airport meet-and-greet signature service"
+                          ]
+                       },
+                       {
+                          num: "02",
+                          title: "Masterclass Guiding",
+                          points: [
+                             "Licensed local heritage experts",
+                             "Multilingual communication (English/Hindi/Urdu)",
+                             "Deep-root access to remote mountain villages",
+                             "Photography-assist during all excursions"
+                          ]
+                       },
+                       {
+                          num: "03",
+                          title: "Royal Accommodations",
+                          points: [
+                             "Vetted 4-star and 5-star mountain resorts",
+                             "Heritage houseboats with private butler service",
+                             "Glamping setups at Sinthan Top for enthusiasts",
+                             "Daily gourmet breakfast and local cuisine"
+                          ]
+                       }
+                    ].map((item, idx) => (
+                       <motion.div 
+                         key={idx}
+                         initial={{ opacity: 0, x: -30 }}
+                         whileInView={{ opacity: 1, x: 0 }}
+                         viewport={{ once: true }}
+                         className="relative pl-16 group"
+                       >
+                          <span className="absolute left-0 top-0 serif text-5xl text-gold/10 group-hover:text-gold/30 transition-colors duration-700">{item.num}</span>
+                          <h4 className="serif text-3xl text-ink mb-8">{item.title}</h4>
+                          <ul className="space-y-4">
+                             {item.points.map((point, pIdx) => (
+                                <li key={pIdx} className="flex items-center gap-4 text-ink/40 text-sm font-light tracking-wide">
+                                   <div className="w-1 h-1 bg-gold rounded-full" />
+                                   {point}
+                                </li>
+                             ))}
+                          </ul>
+                       </motion.div>
+                    ))}
+                 </div>
+              </div>
+
+              <div className="sticky top-40">
+                 <div className="relative rounded-[4rem] overflow-hidden group shadow-2xl">
+                    <img 
+                      src="/dal_lake.png" 
+                      alt="Heritage Detail" 
+                      className="w-full aspect-[4/5] object-cover transition-transform duration-1000 group-hover:scale-110" 
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent opacity-60"></div>
+                    
+                    <div className="absolute bottom-16 left-16 right-16">
+                       <div className="bg-white/10 backdrop-blur-3xl border border-white/20 p-10 rounded-[2.5rem] text-white">
+                          <p className="text-[10px] uppercase tracking-[0.4em] font-black text-gold mb-4">Quality Assurance</p>
+                          <h3 className="serif text-4xl mb-6">Government <br />Registered Excellence</h3>
+                          <div className="flex gap-4">
+                             <ShieldCheck className="text-gold" size={24} />
+                             <p className="text-white/60 text-sm font-light leading-relaxed">
+                                Fully licensed by the J&K Department of Tourism. Registration No: JK-TOUR-2024-8842.
+                             </p>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
       </div>
     </div>
   );
