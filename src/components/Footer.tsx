@@ -9,7 +9,7 @@ export const Footer = () => {
         <div className="grid md:grid-cols-4 gap-12 mb-16">
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center gap-3 mb-6">
-              <Mountain size={28} className="text-gold" />
+              <img src="/logo.png" alt="Kashmir Sinthan Top Logo" className="h-12 w-auto brightness-0 invert" />
               <span className="serif text-2xl font-medium tracking-tight">
                 Kashmir Sinthan Top
               </span>
@@ -18,16 +18,16 @@ export const Footer = () => {
               Experience the breathtaking landscapes of the Himalayas through the eyes of those who call it home.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold hover:border-gold hover:text-ink transition-all">
+              <a href="https://www.instagram.com/kashmir_sinthan_top/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold hover:border-gold hover:text-ink transition-all">
                 <Instagram size={18} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold hover:border-gold hover:text-ink transition-all">
+              <a href="https://www.facebook.com/kashmirsinthantop/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold hover:border-gold hover:text-ink transition-all">
                 <Facebook size={18} />
               </a>
               <a href="https://wa.me/919797125922" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-[#25D366] hover:border-[#25D366] hover:text-white transition-all">
                 <MessageCircle size={18} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold hover:border-gold hover:text-ink transition-all">
+              <a href="https://www.youtube.com/@KashmirSinthanTop" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold hover:border-gold hover:text-ink transition-all">
                 <Youtube size={18} />
               </a>
             </div>

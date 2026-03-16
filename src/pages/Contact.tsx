@@ -65,6 +65,7 @@ export const Contact = () => {
             className="bg-white/5 backdrop-blur-3xl p-8 md:p-12 rounded-[2rem] md:rounded-[3rem] border border-white/10 shadow-2xl relative overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-64 h-64 bg-gold rounded-full -z-10 blur-[100px] opacity-10"></div>
+            <h3 className="serif text-3xl mb-8">Send Feedback or Inquiry</h3>
             <form className="space-y-10" onSubmit={(e) => e.preventDefault()}>
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="space-y-3">
@@ -77,18 +78,17 @@ export const Contact = () => {
                 </div>
               </div>
               <div className="space-y-3">
-                <MicroLabel className="text-white/40">Destination</MicroLabel>
+                <MicroLabel className="text-white/40">Type of Feedback</MicroLabel>
                 <select className="w-full bg-transparent border-b border-white/20 pb-3 focus:border-gold outline-none transition-colors appearance-none text-lg">
-                  <option className="bg-ink text-white">Complete Tour Package</option>
-                  <option className="bg-ink text-white">Kashmir Eternal Beauty</option>
-                  <option className="bg-ink text-white">Ladakh Adventure</option>
-                  <option className="bg-ink text-white">Sinthan Top Special</option>
-                  <option className="bg-ink text-white">Custom Itinerary</option>
+                  <option className="bg-ink text-white">General Inquiry</option>
+                  <option className="bg-ink text-white">Service Feedback</option>
+                  <option className="bg-ink text-white">Booking Request</option>
+                  <option className="bg-ink text-white">Custom Package Request</option>
                 </select>
               </div>
               <div className="space-y-3">
                 <MicroLabel className="text-white/40">Message</MicroLabel>
-                <textarea rows={4} className="w-full bg-transparent border-b border-white/20 pb-3 focus:border-gold outline-none transition-colors resize-none text-lg" placeholder="Tell us about your dream trip..."></textarea>
+                <textarea rows={4} className="w-full bg-transparent border-b border-white/20 pb-3 focus:border-gold outline-none transition-colors resize-none text-lg" placeholder="Tell us about your experience or dream trip..."></textarea>
               </div>
               <div className="flex flex-col xl:flex-row gap-4">
                 <button className="flex-1 py-4 bg-gold text-white rounded-full font-bold uppercase tracking-widest text-[13px] hover:bg-white hover:text-ink transition-all duration-500 shadow-2xl shadow-gold/20 flex items-center justify-center gap-2">
@@ -114,6 +114,19 @@ export const Contact = () => {
               </div>
             </form>
           </motion.div>
+        </div>
+
+        {/* Google Map */}
+        <div className="mt-32 rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl aspect-video md:aspect-[21/9]">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13303.468208647842!2d75.4241036!3d33.6166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38e2197148ae0c7b%3A0x67ee656c2d1b7b7!2sDaksum%2C%20Jammu%20and%20Kashmir%20192202!5e0!3m2!1sen!2sin!4v1710345678901!5m2!1sen!2sin" 
+            width="100%" 
+            height="100%" 
+            style={{ border: 0 }} 
+            allowFullScreen 
+            loading="lazy" 
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
       </div>
     </div>

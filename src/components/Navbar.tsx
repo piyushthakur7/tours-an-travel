@@ -34,7 +34,11 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className={`flex justify-between items-center px-6 py-3 rounded-full transition-all duration-500 ${scrolled ? 'bg-white/90 backdrop-blur-xl shadow-lg border border-black/5' : 'bg-transparent'}`}>
           <Link to="/" className="flex items-center gap-3">
-            <Mountain size={22} className={scrolled ? 'text-gold' : 'text-white'} />
+            <img 
+              src="/logo.png" 
+              alt="Kashmir Sinthan Top Logo" 
+              className={`h-10 w-auto transition-all duration-500 ${scrolled ? 'brightness-0' : 'brightness-0 invert'}`} 
+            />
             <span className={`serif text-xl font-medium tracking-tight ${scrolled ? 'text-ink' : 'text-white'}`}>
               Kashmir Sinthan Top
             </span>
