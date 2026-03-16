@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
-import { Instagram, Facebook, Youtube, ArrowRight } from 'lucide-react';
+import { Instagram, Facebook, Youtube, ArrowRight, MapPin, Compass } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { MicroLabel, SectionTitle, PackageCard } from '../components/UI';
 
@@ -217,6 +217,13 @@ export const Home = () => {
                     <p className="text-[9px] uppercase tracking-widest text-ink/40">Happy Explorers</p>
                  </div>
               </div>
+              
+              <Link to="/testimonials" className="inline-flex items-center gap-4 mt-12 text-gold group">
+                <span className="text-[10px] font-black uppercase tracking-[0.3em] border-b border-gold/20 group-hover:border-gold pb-2 transition-all">Read All Experiences</span>
+                <div className="w-10 h-10 rounded-full border border-gold/20 flex items-center justify-center group-hover:bg-gold group-hover:text-white transition-all duration-500">
+                  <ArrowRight size={16} />
+                </div>
+              </Link>
             </div>
 
             <div className="lg:col-span-8 space-y-12">
@@ -306,6 +313,136 @@ export const Home = () => {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Feedback Section */}
+      <section className="py-40 bg-paper overflow-hidden relative">
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/5 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2"></div>
+        <div className="max-w-7xl mx-auto px-10">
+          <div className="bg-white rounded-[4rem] p-16 md:p-32 shadow-[0_40px_100px_rgba(0,0,0,0.05)] border border-black/5 relative overflow-hidden">
+             <div className="grid lg:grid-cols-2 gap-24 items-center">
+                <div>
+                   <div className="flex items-center gap-4 mb-8">
+                      <span className="w-12 h-[1px] bg-gold"></span>
+                      <MicroLabel className="text-gold mb-0">Direct Feedback</MicroLabel>
+                   </div>
+                   <h2 className="serif text-5xl md:text-7xl font-extralight text-ink mb-10 tracking-tight leading-[0.85]">
+                      Help Us Perfect the <br /><span className="italic text-gold">Art of Travel</span>
+                   </h2>
+                   <p className="text-ink/40 text-xl font-light leading-relaxed mb-12 max-w-lg">
+                      Your insights help us refine our signature experiences. Share your thoughts on how we can make your next journey even more extraordinary.
+                   </p>
+                   <div className="flex items-center gap-6">
+                      <div className="flex -space-x-3">
+                         {[6,7,8,9].map(i => (
+                           <div key={i} className="w-10 h-10 rounded-full border-2 border-white overflow-hidden bg-paper">
+                             <img src={`https://i.pravatar.cc/100?img=${i+20}`} alt="User" />
+                           </div>
+                         ))}
+                      </div>
+                      <span className="text-ink/30 text-[10px] uppercase tracking-widest font-black">Trusted by 500+ Luxury Travelers</span>
+                   </div>
+                </div>
+
+                <div className="relative">
+                   <form className="space-y-12" onSubmit={(e) => e.preventDefault()}>
+                      <div className="grid md:grid-cols-2 gap-10">
+                        <div className="space-y-4">
+                          <MicroLabel className="text-ink/30">Your Name</MicroLabel>
+                          <input type="text" className="w-full bg-transparent border-b border-black/10 pb-4 focus:border-gold outline-none transition-all text-xl font-light text-ink" placeholder="Ishfaq Ahmed" />
+                        </div>
+                        <div className="space-y-4">
+                          <MicroLabel className="text-ink/30">Travel Date</MicroLabel>
+                          <input type="text" className="w-full bg-transparent border-b border-black/10 pb-4 focus:border-gold outline-none transition-all text-xl font-light text-ink" placeholder="MM / YY" />
+                        </div>
+                      </div>
+                      <div className="space-y-4">
+                        <MicroLabel className="text-ink/30">Experience Rating</MicroLabel>
+                        <div className="flex gap-4">
+                           {[1,2,3,4,5].map(star => (
+                             <button key={star} className="w-12 h-12 rounded-2xl bg-paper flex items-center justify-center text-ink/20 hover:text-gold hover:bg-gold/5 transition-all">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                             </button>
+                           ))}
+                        </div>
+                      </div>
+                      <div className="space-y-4">
+                        <MicroLabel className="text-ink/30">Detailed Feedback</MicroLabel>
+                        <textarea rows={2} className="w-full bg-transparent border-b border-black/10 pb-4 focus:border-gold outline-none transition-all resize-none text-xl font-light text-ink" placeholder="How was your journey?"></textarea>
+                      </div>
+                      <button className="w-full py-6 bg-ink text-white rounded-full font-black uppercase tracking-[0.4em] text-[10px] hover:bg-gold transition-all duration-700 shadow-xl group flex items-center justify-center gap-4">
+                        Submit Feedback 
+                        <span className="w-6 h-[1px] bg-white/30 group-hover:w-10 transition-all"></span>
+                      </button>
+                   </form>
+                </div>
+             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Map Section - The Base */}
+      <section className="py-40 bg-ink relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-10">
+           <div className="grid lg:grid-cols-12 gap-24 items-center">
+              <div className="lg:col-span-4">
+                 <div className="flex items-center gap-4 mb-8">
+                    <span className="w-12 h-[1px] bg-gold"></span>
+                    <MicroLabel className="text-gold mb-0">Our Sanctuary</MicroLabel>
+                 </div>
+                 <h2 className="serif text-5xl md:text-7xl font-extralight text-white mb-10 tracking-tight leading-[0.85]">
+                   Located in the <br /><span className="italic text-gold text-5xl md:text-8xl">Heart of Daksum</span>
+                 </h2>
+                 <p className="text-white/40 text-xl font-light leading-relaxed mb-12">
+                   Our base is nestled in Dessu, Daksum—the gateway to the high Himalayas. Visit us to begin your journey where the road meets the sky.
+                 </p>
+                 <div className="space-y-6">
+                    <div className="flex items-start gap-6 group">
+                       <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-ink transition-all">
+                          <MapPin size={20} />
+                       </div>
+                       <div>
+                          <p className="text-[10px] uppercase tracking-[0.3em] text-white/20 mb-1">Base Address</p>
+                          <p className="serif text-2xl text-white">Dessu, Daksum, Anantnag, J&K</p>
+                       </div>
+                    </div>
+                    <div className="flex items-start gap-6 group">
+                       <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-ink transition-all">
+                          <Compass size={20} />
+                       </div>
+                       <div>
+                          <p className="text-[10px] uppercase tracking-[0.3em] text-white/20 mb-1">Coordinates</p>
+                          <p className="serif text-2xl text-white italic">33.6166° N, 75.4241° E</p>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+
+              <div className="lg:col-span-8 relative">
+                 <motion.div 
+                   initial={{ opacity: 0, scale: 0.95 }}
+                   whileInView={{ opacity: 1, scale: 1 }}
+                   viewport={{ once: true }}
+                   className="rounded-[4rem] overflow-hidden border border-white/5 shadow-2xl aspect-[16/10] lg:aspect-[21/9] grayscale hover:grayscale-0 transition-all duration-1000 relative group"
+                 >
+                    <iframe 
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13303.468208647842!2d75.4241036!3d33.6166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38e2197148ae0c7b%3A0x67ee656c2d1b7b7!2sDaksum%2C%20Jammu%20and%20Kashmir%20192202!5e0!3m2!1sen!2sin!4v1710345678901!5m2!1sen!2sin" 
+                      width="100%" 
+                      height="100%" 
+                      style={{ border: 0 }} 
+                      allowFullScreen 
+                      loading="lazy" 
+                      referrerPolicy="no-referrer-when-downgrade"
+                    ></iframe>
+                    <div className="absolute inset-0 bg-ink/20 group-hover:bg-transparent transition-all duration-700 pointer-events-none"></div>
+                 </motion.div>
+                 <div className="absolute -bottom-10 -left-10 bg-gold p-8 rounded-[2rem] shadow-2xl hidden md:block z-20">
+                    <p className="text-[10px] font-black uppercase tracking-[0.3em] text-white">The Summit Access</p>
+                    <p className="serif text-3xl text-white mt-1">Gateway <br />to 12,000ft</p>
+                 </div>
+              </div>
+           </div>
         </div>
       </section>
 

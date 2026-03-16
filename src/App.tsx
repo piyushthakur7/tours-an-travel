@@ -9,6 +9,7 @@ import { About } from './pages/About';
 import { Contact } from './pages/Contact';
 import { Gallery } from './pages/Gallery';
 import { Hotels } from './pages/Hotels';
+import { Testimonials } from './pages/Testimonials';
 
 
 const ScrollToTop = () => {
@@ -60,6 +61,7 @@ export default function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/hotels" element={<Hotels />} />
             <Route path="/gallery" element={<Gallery />} />
+            <Route path="/testimonials" element={<Testimonials />} />
 
           </Routes>
         </main>

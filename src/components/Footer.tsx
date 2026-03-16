@@ -51,6 +51,7 @@ export const Footer = () => {
                 { name: 'Luxury Hotels', path: '/hotels' },
                 { name: 'Our Services', path: '/services' },
                 { name: 'The Legacy', path: '/about' },
+                { name: 'Guest Reviews', path: '/testimonials' },
                 { name: 'Get in Touch', path: '/contact' }
               ].map((link) => (
                 <li key={link.name}>
