@@ -50,39 +50,52 @@ export const SectionTitle = ({ title, subtitle, light = false }: { title: string
 
 export const PackageCard = ({ image, title, price, duration, size = "small" }: { image: string, title: string, price: string, duration: string, size?: "small" | "large" }) => (
   <motion.div
-    whileHover={{ y: -10 }}
-    className={`${size === "large" ? 'md:col-span-2 md:row-span-2' : ''} relative group overflow-hidden rounded-[2.5rem] bg-ink h-full min-h-[300px]`}
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    whileHover={{ y: -15, scale: 1.01 }}
+    transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+    className={`${size === "large" ? 'md:col-span-2 md:row-span-2' : ''} relative group overflow-hidden rounded-[3rem] bg-ink h-full min-h-[350px] shadow-[0_20px_50px_rgba(0,0,0,0.2)] hover:shadow-[0_40px_80px_rgba(0,0,0,0.4)]`}
   >
     <img
       src={image}
       alt={title}
-      className="w-full h-full object-cover opacity-70 group-hover:opacity-40 transition-all duration-700 group-hover:scale-110"
+      className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-40 transition-all duration-1000 group-hover:scale-110"
       referrerPolicy="no-referrer"
     />
-    <div className="absolute inset-0 p-8 flex flex-col justify-end">
-      <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-        <div className="flex justify-between items-end">
+    <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-700"></div>
+    
+    <div className="absolute inset-0 p-10 flex flex-col justify-end z-10">
+      <div className="translate-y-6 group-hover:translate-y-0 transition-all duration-700 ease-out">
+        <div className="flex justify-between items-end gap-6">
           <Link to="/contact" className="flex-1">
-            <MicroLabel className="text-white/60 mb-2">{duration}</MicroLabel>
-            <h3 className={`serif text-white font-light mb-2 ${size === "large" ? 'text-4xl' : 'text-2xl'}`}>{title}</h3>
-            <p className="text-gold font-mono text-sm">{price}</p>
+            <div className="flex items-center gap-2 mb-3">
+              <span className="w-8 h-[1px] bg-gold/50 group-hover:w-12 transition-all duration-500"></span>
+              <MicroLabel className="text-gold mb-0">{duration}</MicroLabel>
+            </div>
+            <h3 className={`serif text-white font-light mb-2 leading-tight ${size === "large" ? 'text-5xl lg:text-6xl' : 'text-3xl'}`}>{title}</h3>
+            <div className="flex items-center gap-3 mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+               <span className="text-white/40 font-mono text-xs uppercase tracking-widest">Starting from</span>
+               <p className="text-gold font-mono text-lg font-bold">{price}</p>
+            </div>
           </Link>
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-3">
             <a 
               href={`https://wa.me/919797125922?text=I'm interested in the ${title} package`}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 rounded-full bg-[#25D366] flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              className="w-14 h-14 rounded-full bg-[#25D366] flex items-center justify-center text-white scale-0 group-hover:scale-100 transition-transform duration-500 hover:rotate-12 hover:shadow-[0_0_20px_rgba(37,211,102,0.4)]"
               title="Book via WhatsApp"
+              onClick={(e) => e.stopPropagation()}
             >
-              <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+              <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
             </a>
             <Link 
               to="/contact" 
-              className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              className="w-14 h-14 rounded-full bg-white text-ink flex items-center justify-center scale-0 group-hover:scale-100 transition-transform duration-500 delay-75 hover:bg-gold hover:text-white hover:shadow-[0_0_20px_rgba(197,160,89,0.4)]"
               title="More Details"
             >
-              <ArrowUpRight size={20} />
+              <ArrowUpRight size={24} />
             </Link>
           </div>
         </div>

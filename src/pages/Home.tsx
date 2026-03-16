@@ -12,71 +12,63 @@ export const Home = () => {
     <div className="bg-paper selection:bg-gold selection:text-white">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-ink">
-        <motion.div style={{ y: y1 }} className="absolute inset-0 z-0">
+        <motion.div style={{ y: y1 }} className="absolute inset-0 z-0 scale-110">
           <img
-            src="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?q=80&w=2070&auto=format&fit=crop"
+            src="/sinthan_top.png"
             alt="Kashmir"
             className="w-full h-full object-cover opacity-60"
-            referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-ink/20 via-transparent to-ink"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/20 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-ink/20"></div>
         </motion.div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-20">
-          <div className="grid lg:grid-cols-12 gap-12 items-end">
-            <div className="lg:col-span-8">
+        <div className="relative z-10 max-w-7xl mx-auto px-10 w-full pt-32">
+          <div className="grid lg:grid-cols-12 gap-20 items-center">
+            <div className="lg:col-span-9">
               <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
               >
-                <MicroLabel className="text-gold/80">Registered Tourism Agency</MicroLabel>
-                <h1 className="serif text-[12vw] lg:text-[8vw] leading-[0.9] text-white font-light mb-8">
-                  The Soul of <br />
-                  <span className="italic text-gold">Kashmir</span>
-                </h1>
-                <p className="text-white/60 text-lg md:text-xl max-w-xl font-light leading-relaxed mb-12">
-                  Complete Kashmir & Ladakh tour packages. From transportation and luxury houseboats to professional pre-wedding cinematography, we make your journey truly unforgettable.
-                </p>
-                <div className="flex flex-wrap gap-8">
-                  <Link to="/packages" className="group flex items-center gap-4 text-white">
-                    <div className="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-gold group-hover:border-gold transition-all duration-500">
-                      <ArrowRight size={20} />
-                    </div>
-                    <span className="text-sm font-semibold uppercase tracking-widest">Explore Packages</span>
-                  </Link>
-                  <a 
-                    href="https://www.instagram.com/reel/DVw5X4fEkBC/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="group flex items-center gap-4 text-white"
-                  >
-                    <div className="w-14 h-14 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm flex items-center justify-center group-hover:bg-gold group-hover:border-gold transition-all duration-500">
-                      <Youtube size={20} />
-                    </div>
-                    <span className="text-sm font-semibold uppercase tracking-widest">Watch Our Story</span>
-                  </a>
+                <div className="flex items-center gap-4 mb-8">
+                  <span className="w-12 h-[1px] bg-gold"></span>
+                  <MicroLabel className="text-gold mb-0 tracking-[0.4em]">Government Registered Agency</MicroLabel>
                 </div>
-              </motion.div>
-            </div>
-            
-            <div className="lg:col-span-4 hidden lg:block">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1.2, delay: 0.4 }}
-                className="relative aspect-[3/4] rounded-full overflow-hidden border border-white/10 p-2"
-              >
-                <img
-                  src="/WhatsApp Image 2026-03-12 at 4.27.13 PM (1).jpeg"
-                  alt="Culture"
-                  className="w-full h-full object-cover rounded-full"
-                />
-
+                <h1 className="serif text-[14vw] lg:text-[10vw] leading-[0.85] text-white font-light mb-10">
+                  Behold the <br />
+                  <span className="italic text-gold">Grandeur</span>
+                </h1>
+                <div className="flex flex-col md:flex-row gap-12 items-start md:items-center">
+                  <p className="text-white/50 text-xl max-w-lg font-light leading-relaxed">
+                    Extraordinary journeys through the heart of the Himalayas. Discover Sinthan Top with the valley's premier travel specialists.
+                  </p>
+                  <div className="flex flex-wrap gap-10">
+                    <Link to="/packages" className="group relative">
+                      <div className="absolute -inset-4 bg-gold/10 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      <div className="relative flex items-center gap-4 text-white">
+                        <div className="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-gold group-hover:border-gold transition-all duration-700 group-hover:scale-110">
+                          <ArrowRight size={24} />
+                        </div>
+                        <span className="text-[10px] font-black uppercase tracking-[0.3em]">Signature Packages</span>
+                      </div>
+                    </Link>
+                  </div>
+                </div>
               </motion.div>
             </div>
           </div>
         </div>
+
+        {/* Scroll Indicator */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 2 }}
+          className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 text-white/20"
+        >
+          <span className="text-[8px] uppercase tracking-[0.5em] font-bold">Scroll to Explore</span>
+          <div className="w-[1px] h-16 bg-gradient-to-b from-gold/50 to-transparent"></div>
+        </motion.div>
 
         {/* Vertical Rail */}
         <div className="absolute right-8 top-1/2 -translate-y-1/2 hidden xl:flex flex-col gap-12 items-center z-20">
@@ -97,40 +89,42 @@ export const Home = () => {
       </section>
 
       {/* Featured Packages - Bento Grid */}
-      <section className="py-32 max-w-7xl mx-auto px-6">
-        <SectionTitle 
-          subtitle="Curated Journeys" 
-          title="Featured Destinations" 
-        />
+      <section className="py-40 max-w-7xl mx-auto px-10">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+          <SectionTitle 
+            subtitle="Signature Collections" 
+            title="Curated Destinations" 
+          />
+          <Link to="/packages" className="group flex items-center gap-6 text-gold mb-4">
+             <span className="text-[10px] font-black uppercase tracking-[0.4em] border-b border-gold/20 group-hover:border-gold pb-2 transition-all">Explore Full Collection</span>
+             <div className="w-12 h-12 rounded-full border border-gold/20 flex items-center justify-center group-hover:bg-gold group-hover:text-white transition-all duration-500">
+               <ArrowRight size={18} />
+             </div>
+          </Link>
+        </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[300px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 auto-rows-[450px]">
           <PackageCard 
             size="large"
-            image="/dal_lake.png"
-            title="Dal Lake Experience"
-            duration="1 Day Shikara & Stay"
-            price="₹4,500"
+            image="/sinthan_top.png"
+            title="Sinthan Top Summit"
+            duration="Exclusive 3-Day Alpine Retreat"
+            price="₹15,000"
           />
 
           <PackageCard 
-            image="/sunmarg.png"
-            title="Sonamarg Valley"
-            duration="2 Days Tour"
+            image="/dal_lake.png"
+            title="Dal Lake Serenity"
+            duration="Luxury Houseboat Experience"
             price="₹8,500"
           />
 
           <PackageCard 
-            image="/sinthan_top.png"
-            title="Sinthan Top Adventure"
-            duration="3 Days / 2 Nights"
-            price="₹12,000"
+            image="/sunmarg.png"
+            title="Sonamarg Meadows"
+            duration="Private Valley Expedition"
+            price="₹10,500"
           />
-        </div>
-        <div className="mt-16 flex justify-center">
-          <Link to="/packages" className="group flex items-center gap-4 text-ink hover:text-gold transition-colors">
-             <span className="text-sm font-bold uppercase tracking-widest border-b border-ink/20 group-hover:border-gold pb-1">View All Packages</span>
-             <ArrowRight size={16} />
-          </Link>
         </div>
       </section>
 

@@ -6,117 +6,106 @@ import { SectionTitle, ServiceItem, PageHeader, MicroLabel } from '../components
 
 export const Services = () => {
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-paper min-h-screen">
       <PageHeader 
-        title="Our Services" 
-        subtitle="Beyond Sightseeing" 
-        bgImage="https://images.unsplash.com/photo-1544161515-436cefd1f16d?q=80&w=2070&auto=format&fit=crop"
+        title="Hospitality & Services" 
+        subtitle="Uncompromising Standards" 
+        bgImage="/dal_lake.png"
       />
       
-      <div className="max-w-7xl mx-auto px-6 py-32">
-        <div className="grid lg:grid-cols-12 gap-16">
-          <div className="lg:col-span-4">
-            <motion.div 
-               className="sticky top-32"
-               initial={{ opacity: 0, x: -20 }}
-               animate={{ opacity: 1, x: 0 }}
-               transition={{ duration: 0.8 }}
-            >
-              <SectionTitle 
-                subtitle="Our Expertise" 
-                title="Seamless Travel Experiences" 
+      <div className="max-w-7xl mx-auto px-10 py-40">
+        <div className="grid lg:grid-cols-12 gap-24">
+          <div className="lg:col-span-12 mb-16 text-center max-w-3xl mx-auto">
+             <SectionTitle 
+                subtitle="The Sinthan Commitment" 
+                title="Seamless Himalayan Hospitality" 
               />
-              <p className="text-ink/60 font-light leading-relaxed mb-8 text-lg">
-                From the moment you land to your final departure, we handle every detail with local precision and care. We are your trusted guides in the valley.
+              <p className="text-ink/50 font-light leading-relaxed text-xl -mt-8">
+                From the moment you arrive in the valley to your final departure, every detail is orchestrated with precision, care, and a deep respect for Kashmiri hospitality.
               </p>
-              <div className="flex items-center gap-4 text-gold font-bold text-xs uppercase tracking-widest bg-ink/5 p-4 rounded-2xl w-fit">
-                <ShieldCheck size={20} className="text-gold" />
-                Govt. Registered Agency
-              </div>
-            </motion.div>
           </div>
-          <div className="lg:col-span-8">
+
+          <div className="lg:col-span-12">
             <motion.div
                initial={{ opacity: 0, y: 20 }}
                animate={{ opacity: 1, y: 0 }}
                transition={{ duration: 0.8, delay: 0.2 }}
+               className="grid md:grid-cols-2 gap-12"
             >
-              <ServiceItem 
-                icon={Car} 
-                title="Transportation & Logistics" 
-                desc="A fleet of luxury SUVs (Innova Crysta, Scorpio) and comfortable sedans driven by experienced mountain pilots. We ensure safety on every sharp bend and offer 24/7 support for all your travel needs."
-              />
-              <ServiceItem 
-                icon={Hotel} 
-                title="Premium Hotel & Houseboat Stays" 
-                desc="Carefully curated hotels in Srinagar, Pahalgam, and Gulmarg. Experience the heritage of traditional luxury houseboats on Dal Lake, blending Kashmiri hospitality with modern luxury."
-              />
-              <ServiceItem 
-                icon={Camera} 
-                title="Cinematic Photography & Videography" 
-                desc="Capture your love story or adventure with our professional pre-wedding cinematography. We provide high-end gear and expert shooters who know the most photogenic spots in the valley. [Watch our latest work](https://www.instagram.com/reel/DVw5X4fEkBC/)"
-              />
-              <ServiceItem 
-                icon={Anchor} 
-                title="Cultural Shikara Experiences" 
-                desc="Go beyond the usual tourist routes. Our private Shikara tours include sunrise vegetable market visits, floating garden tours, and traditional Kashmiri high tea on the water."
-              />
-              <ServiceItem 
-                icon={Globe} 
-                title="Bespoke Tour Itineraries" 
-                desc="From family vacations to extreme adventure trips to Ladakh and Sinthan Top, we design all-inclusive, hassle-free packages tailored to your preferences."
-              />
-              <ServiceItem 
-                icon={ShieldCheck} 
-                title="Local Expert Guides" 
-                desc="Unlock the secrets of the valley with our certified local guides. Experience authentic Kashmiri culture, cuisine, and hidden gems that only locals know."
-              />
+              {[
+                {
+                  icon: Car,
+                  title: "Elite Fleet Logistics",
+                  desc: "Traverse the winding mountain passes in absolute comfort. Our fleet of luxury SUVs and professional mountain pilots ensure safety and elegance on every journey."
+                },
+                {
+                  icon: Hotel,
+                  title: "Curated Accommodations",
+                  desc: "We partner exclusively with boutique mountain resorts and historic houseboats that meet our exacting standards for luxury and service."
+                },
+                {
+                  icon: Camera,
+                  title: "Cinematic Visuals",
+                  desc: "Professional pre-wedding cinematography and adventure travel logs. We don't just guide you; we immortalize your memories against the Himalayan backdrop."
+                },
+                {
+                  icon: Globe,
+                  title: "Bespoke Journey Design",
+                  desc: "Every itinerary is a custom-crafted masterpiece, designed to reflect your individual pace, preferences, and spirit of adventure."
+                },
+                {
+                  icon: Anchor,
+                  title: "The Heritage Collection",
+                  desc: "Private Shikara experiences that bypass the tourist routes, offering authentic glimpses into the floating lifestyle of the Dal Lake."
+                },
+                {
+                  icon: ShieldCheck,
+                  title: "Guardian & Guide",
+                  desc: "Government registered and locally rooted. Our certified guides provide unmatched safety, local access, and cultural immersion."
+                }
+              ].map((service, i) => (
+                <div key={i} className="group p-10 bg-white rounded-[3rem] border border-black/5 hover:border-gold/30 hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] transition-all duration-700">
+                  <div className="w-16 h-16 rounded-2xl bg-paper flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-white transition-all duration-500 mb-8 transform group-hover:-rotate-12">
+                    <service.icon size={28} />
+                  </div>
+                  <h4 className="serif text-3xl mb-4 text-ink group-hover:text-gold transition-colors">{service.title}</h4>
+                  <p className="text-ink/40 font-light leading-relaxed mb-6">{service.desc}</p>
+                </div>
+              ))}
             </motion.div>
           </div>
         </div>
 
         {/* Featured Service: Sinthan Top */}
         <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="mt-32 relative rounded-[3rem] overflow-hidden bg-ink p-12 md:p-24 text-white"
+          className="mt-40 relative rounded-[4rem] overflow-hidden bg-ink p-16 md:p-32 text-white shadow-2xl"
         >
-          <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 z-0 scale-105 group-hover:scale-100 transition-transform duration-1000">
             <img 
               src="/sinthan_top.png" 
               alt="Sinthan Top" 
               className="w-full h-full object-cover opacity-30"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/60 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/40 to-transparent"></div>
           </div>
           
           <div className="relative z-10 max-w-2xl">
-            <MicroLabel className="text-gold">Our Signature Experience</MicroLabel>
-            <h2 className="serif text-4xl md:text-6xl mb-8">Sinthan Top Adventure</h2>
-            <p className="text-white/60 text-lg font-light leading-relaxed mb-12">
-              At 12,000 feet, Sinthan Top is where the clouds meet the earth. As specialists in this region, we provide exclusive access, specialized mountain vehicles, and expert guides who know every inch of this majestic pass. Experience the snow even in peak summer.
+            <div className="flex items-center gap-4 mb-8">
+              <span className="w-12 h-[1px] bg-gold"></span>
+              <MicroLabel className="text-gold mb-0">Signature Experience</MicroLabel>
+            </div>
+            <h2 className="serif text-5xl md:text-8xl mb-10 font-extralight tracking-tight leading-[0.85]">Sinthan <br /><span className="italic text-gold">Grand Summit</span></h2>
+            <p className="text-white/50 text-xl font-light leading-relaxed mb-16 max-w-xl">
+              At 12,000 feet, Sinthan Top is where the clouds meet the earth. We provide exclusive 4x4 access, professional cinematography, and expert guidance to the heights of the Himalayas.
             </p>
-            <ul className="grid grid-cols-2 gap-6 mb-12">
-              <li className="flex items-center gap-3 text-sm font-light text-white/80">
-                <div className="w-1.5 h-1.5 rounded-full bg-gold"></div>
-                Specialized 4x4 Transit
-              </li>
-              <li className="flex items-center gap-3 text-sm font-light text-white/80">
-                <div className="w-1.5 h-1.5 rounded-full bg-gold"></div>
-                Snow Point Access
-              </li>
-              <li className="flex items-center gap-3 text-sm font-light text-white/80">
-                <div className="w-1.5 h-1.5 rounded-full bg-gold"></div>
-                Professional Photography
-              </li>
-              <li className="flex items-center gap-3 text-sm font-light text-white/80">
-                <div className="w-1.5 h-1.5 rounded-full bg-gold"></div>
-                Customized Itineraries
-              </li>
-            </ul>
-            <Link to="/contact" className="inline-flex items-center gap-4 bg-gold px-10 py-5 rounded-full text-white font-bold uppercase tracking-widest text-xs hover:bg-white hover:text-ink transition-all duration-500">
-              Book the Adventure <ArrowRight size={16} />
+            <Link to="/contact" className="group flex items-center gap-6 text-white overflow-hidden">
+               <div className="w-20 h-20 rounded-full bg-gold flex items-center justify-center group-hover:bg-white group-hover:text-ink transition-all duration-700 group-hover:scale-110">
+                 <ArrowRight size={28} />
+               </div>
+               <span className="text-[10px] font-black uppercase tracking-[0.4em]">Mount the Expedition</span>
             </Link>
           </div>
         </motion.div>

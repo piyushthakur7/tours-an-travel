@@ -32,15 +32,18 @@ export const Navbar = () => {
   return (
     <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'py-4' : 'py-8'}`}>
       <div className="max-w-7xl mx-auto px-6">
-        <div className={`flex justify-between items-center px-6 py-3 rounded-full transition-all duration-500 ${scrolled ? 'bg-white/90 backdrop-blur-xl shadow-lg border border-black/5' : 'bg-transparent'}`}>
-          <Link to="/" className="flex items-center gap-3">
-            <img 
-              src="/logo.png" 
-              alt="Kashmir Sinthan Top Logo" 
-              className={`h-10 w-auto transition-all duration-500 ${scrolled ? 'brightness-0' : 'brightness-0 invert'}`} 
-            />
-            <span className={`serif text-xl font-medium tracking-tight ${scrolled ? 'text-ink' : 'text-white'}`}>
-              Kashmir Sinthan Top
+        <div className={`flex justify-between items-center px-10 py-4 rounded-full transition-all duration-700 ${scrolled ? 'bg-white/95 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-black/5' : 'bg-white/10 backdrop-blur-md border border-white/20'}`}>
+          <Link to="/" className="flex items-center gap-4 group">
+            <div className="relative">
+              <img 
+                src="/logo.png" 
+                alt="Kashmir Sinthan Top Logo" 
+                className="h-10 w-auto transition-transform duration-500 group-hover:scale-110" 
+              />
+              <div className="absolute inset-0 bg-gold/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full"></div>
+            </div>
+            <span className={`serif text-2xl font-light tracking-tight transition-colors duration-500 ${scrolled ? 'text-ink' : 'text-white'}`}>
+              Kashmir <span className="italic text-gold">Sinthan Top</span>
             </span>
           </Link>
           
@@ -49,25 +52,26 @@ export const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className={`text-[11px] uppercase tracking-[0.2em] font-semibold transition-colors ${
+                className={`text-[10px] uppercase tracking-[0.25em] font-bold transition-all duration-300 relative group overflow-hidden ${
                   location.pathname === item.path
-                    ? (scrolled ? 'text-gold' : 'text-gold')
+                    ? 'text-gold'
                     : (scrolled ? 'text-ink/60 hover:text-gold' : 'text-white/70 hover:text-white')
                 }`}
               >
                 {item.name}
+                <span className={`absolute bottom-0 left-0 w-full h-[1px] bg-gold transition-transform duration-500 origin-left ${location.pathname === item.path ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
               </Link>
             ))}
             <Link
               to="/contact"
-              className={`px-6 py-2 rounded-full text-[11px] uppercase tracking-widest font-bold transition-all ${scrolled ? 'bg-ink text-white hover:bg-gold' : 'bg-white text-ink hover:bg-gold hover:text-white'}`}
+              className={`px-8 py-3 rounded-full text-[10px] uppercase tracking-[0.2em] font-black transition-all duration-500 transform hover:-translate-y-1 active:scale-95 ${scrolled ? 'bg-ink text-white hover:bg-gold hover:shadow-xl' : 'bg-gold text-white hover:bg-white hover:text-gold hover:shadow-[0_10px_30px_rgba(197,160,89,0.3)]'}`}
             >
-              Book Now
+              Book Your Escape
             </Link>
           </div>
 
-          <button onClick={() => setIsOpen(!isOpen)} className="md:hidden">
-            {isOpen ? <X className="text-ink" /> : <Menu className={scrolled ? 'text-ink' : 'text-white'} />}
+          <button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2">
+            {isOpen ? <X className="text-ink" size={24} /> : <Menu className={scrolled ? 'text-ink' : 'text-white'} size={24} />}
           </button>
         </div>
       </div>

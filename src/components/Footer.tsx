@@ -4,64 +4,92 @@ import { Link } from 'react-router-dom';
 
 export const Footer = () => {
   return (
-    <footer className="bg-ink text-white py-16 border-t border-white/10">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-12 mb-16">
+    <footer className="bg-ink text-white py-24 border-t border-white/5 relative overflow-hidden">
+      {/* Decorative element */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gold/5 blur-[150px] rounded-full -translate-y-1/2 translate-x-1/2"></div>
+      
+      <div className="max-w-7xl mx-auto px-10 relative z-10">
+        <div className="grid md:grid-cols-4 gap-16 mb-24">
           <div className="md:col-span-2">
-            <Link to="/" className="flex items-center gap-3 mb-6">
-              <img src="/logo.png" alt="Kashmir Sinthan Top Logo" className="h-12 w-auto brightness-0 invert" />
-              <span className="serif text-2xl font-medium tracking-tight">
-                Kashmir Sinthan Top
+            <Link to="/" className="flex items-center gap-4 mb-8 group">
+              <div className="relative">
+                <img src="/logo.png" alt="Kashmir Sinthan Top Logo" className="h-14 w-auto drop-shadow-2xl transition-transform duration-500 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gold/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full"></div>
+              </div>
+              <span className="serif text-3xl font-light tracking-tight">
+                Kashmir <span className="italic text-gold">Sinthan Top</span>
               </span>
             </Link>
-            <p className="text-white/60 font-light max-w-sm mb-8 leading-relaxed">
-              Experience the breathtaking landscapes of the Himalayas through the eyes of those who call it home.
+            <p className="text-white/40 font-light max-w-sm mb-10 leading-relaxed text-lg">
+              Crafting extraordinary Himalayan experiences for the discerning traveler. Government registered and locally inspired.
             </p>
-            <div className="flex gap-4">
-              <a href="https://www.instagram.com/kashmir_sinthan_top/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold hover:border-gold hover:text-ink transition-all">
-                <Instagram size={18} />
-              </a>
-              <a href="https://www.facebook.com/kashmirsinthantop/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold hover:border-gold hover:text-ink transition-all">
-                <Facebook size={18} />
-              </a>
-              <a href="https://wa.me/919797125922" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-[#25D366] hover:border-[#25D366] hover:text-white transition-all">
-                <MessageCircle size={18} />
-              </a>
-              <a href="https://www.youtube.com/@KashmirSinthanTop" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold hover:border-gold hover:text-ink transition-all">
-                <Youtube size={18} />
-              </a>
+            <div className="flex gap-6">
+              {[
+                { icon: Instagram, href: "https://www.instagram.com/kashmir_sinthan_top/" },
+                { icon: Facebook, href: "https://www.facebook.com/kashmirsinthantop/" },
+                { icon: MessageCircle, href: "https://wa.me/919797125922", color: "#25D366" },
+                { icon: Youtube, href: "https://www.youtube.com/@KashmirSinthanTop" }
+              ].map((social, i) => (
+                <a 
+                  key={i}
+                  href={social.href} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className={`w-12 h-12 rounded-full border border-white/10 flex items-center justify-center transition-all duration-500 hover:scale-110 ${social.color ? `hover:bg-[${social.color}] hover:border-[${social.color}]` : 'hover:bg-gold hover:border-gold hover:text-ink'}`}
+                >
+                  <social.icon size={20} />
+                </a>
+              ))}
             </div>
           </div>
           
           <div>
-            <h4 className="serif text-xl mb-6">Quick Links</h4>
-            <ul className="space-y-4">
-              <li><Link to="/packages" className="text-white/60 hover:text-gold transition-colors text-sm font-light">Destinations & Packages</Link></li>
-              <li><Link to="/hotels" className="text-white/60 hover:text-gold transition-colors text-sm font-light">Hotel Booking</Link></li>
-              <li><Link to="/services" className="text-white/60 hover:text-gold transition-colors text-sm font-light">Our Services</Link></li>
-              <li><Link to="/about" className="text-white/60 hover:text-gold transition-colors text-sm font-light">The Legacy</Link></li>
-              <li><Link to="/contact" className="text-white/60 hover:text-gold transition-colors text-sm font-light">Contact Us</Link></li>
+            <h4 className="serif text-xl mb-8 text-gold font-light tracking-wide">Explore</h4>
+            <ul className="space-y-5">
+              {[
+                { name: 'Destinations', path: '/packages' },
+                { name: 'Luxury Hotels', path: '/hotels' },
+                { name: 'Our Services', path: '/services' },
+                { name: 'The Legacy', path: '/about' },
+                { name: 'Get in Touch', path: '/contact' }
+              ].map((link) => (
+                <li key={link.name}>
+                  <Link to={link.path} className="text-white/40 hover:text-gold transition-all duration-300 text-sm font-light tracking-widest uppercase flex items-center gap-3 group">
+                    <span className="w-0 h-[1px] bg-gold transition-all duration-300 group-hover:w-4"></span>
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div>
-            <h4 className="serif text-xl mb-6">Contact</h4>
-            <ul className="space-y-4 text-white/60 text-sm font-light">
-              <li>+91 9797125922</li>
-              <li>kashmirsinthan@gmail.com</li>
-              <li>Dessu, Daksum, Anantnag, J&K</li>
+            <h4 className="serif text-xl mb-8 text-gold font-light tracking-wide">Contact</h4>
+            <ul className="space-y-6 text-white/40 text-sm font-light tracking-wider">
+              <li className="flex flex-col gap-1">
+                <span className="text-[10px] uppercase tracking-[0.3em] text-white/20 mb-1">Enquiries</span>
+                <span className="text-white/60">+91 9797125922</span>
+              </li>
+              <li className="flex flex-col gap-1">
+                <span className="text-[10px] uppercase tracking-[0.3em] text-white/20 mb-1">Email</span>
+                <span className="text-white/60">kashmirsinthan@gmail.com</span>
+              </li>
+              <li className="flex flex-col gap-1">
+                <span className="text-[10px] uppercase tracking-[0.3em] text-white/20 mb-1">Our Base</span>
+                <span className="text-white/60">Dessu, Daksum, Anantnag, J&K</span>
+              </li>
             </ul>
           </div>
         </div>
         
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-xs text-white/40 font-light">
-          <div className="text-center md:text-left mb-4 md:mb-0">
-            <p>&copy; {new Date().getFullYear()} Kashmir Sinthan Top Tour & Travel. All rights reserved.</p>
-            <p className="mt-1">Developed by <a href="https://www.webtotalsolution.com/" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">Web Total Solution</a></p>
+        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[10px] text-white/20 font-bold uppercase tracking-[0.3em]">
+          <div className="text-center md:text-left mb-6 md:mb-0">
+            <p>&copy; {new Date().getFullYear()} Kashmir Sinthan Top. All rights reserved.</p>
+            <p className="mt-2 text-white/10">Architecture by <a href="https://www.webtotalsolution.com/" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">Web Total Solution</a></p>
           </div>
-          <div className="flex gap-4">
-            <a href="#" className="hover:text-gold transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-gold transition-colors">Terms of Service</a>
+          <div className="flex gap-10">
+            <a href="#" className="hover:text-gold transition-colors">Privacy</a>
+            <a href="#" className="hover:text-gold transition-colors">Terms</a>
           </div>
         </div>
       </div>
