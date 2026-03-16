@@ -25,10 +25,18 @@ export const Navbar = () => {
     { name: 'Services', path: '/services' },
     { name: 'About', path: '/about' },
     { name: 'Gallery', path: '/gallery' },
-    { name: 'Reviews', path: '/testimonials' },
+    { 
+      name: 'Reviews', 
+      path: '/testimonials',
+      dropdown: [
+        { name: 'Guest Stories', path: '/testimonials' },
+        { name: 'Share Feedback', path: '/feedback' }
+      ]
+    },
     { name: 'Contact', path: '/contact' }
-
   ];
+
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'py-4' : 'py-8'}`}>
@@ -50,18 +58,57 @@ export const Navbar = () => {
           
           <div className="hidden md:flex items-center gap-10">
             {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                className={`text-[10px] uppercase tracking-[0.25em] font-bold transition-all duration-300 relative group overflow-hidden ${
-                  location.pathname === item.path
-                    ? 'text-gold'
-                    : (scrolled ? 'text-ink/60 hover:text-gold' : 'text-white/70 hover:text-white')
-                }`}
+              <div 
+                key={item.name} 
+                className="relative group/nav"
+                onMouseEnter={() => item.dropdown && setActiveDropdown(item.name)}
+                onMouseLeave={() => setActiveDropdown(null)}
               >
-                {item.name}
-                <span className={`absolute bottom-0 left-0 w-full h-[1px] bg-gold transition-transform duration-500 origin-left ${location.pathname === item.path ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
-              </Link>
+                <Link
+                  to={item.path}
+                  className={`text-[10px] uppercase tracking-[0.25em] font-bold transition-all duration-300 relative py-2 group overflow-hidden flex items-center gap-1 ${
+                    location.pathname === item.path || (item.dropdown?.some(d => location.pathname === d.path))
+                      ? 'text-gold'
+                      : (scrolled ? 'text-ink/60 hover:text-gold' : 'text-white/70 hover:text-white')
+                  }`}
+                >
+                  {item.name}
+                  {item.dropdown && (
+                    <svg className={`w-3 h-3 transition-transform duration-300 ${activeDropdown === item.name ? 'rotate-180' : ''}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                  )}
+                  <span className={`absolute bottom-0 left-0 w-full h-[1px] bg-gold transition-transform duration-500 origin-left ${location.pathname === item.path ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
+                </Link>
+
+                {item.dropdown && (
+                  <AnimatePresence>
+                    {activeDropdown === item.name && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                        transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                        className="absolute top-full left-1/2 -translate-x-1/2 pt-4"
+                      >
+                        <div className={`p-4 rounded-3xl min-w-[200px] shadow-2xl border border-black/5 ${scrolled ? 'bg-white' : 'bg-ink/90 backdrop-blur-xl'}`}>
+                          {item.dropdown.map((subItem) => (
+                            <Link
+                              key={subItem.name}
+                              to={subItem.path}
+                              className={`block px-6 py-4 rounded-2xl text-[9px] uppercase tracking-[0.2em] font-bold transition-all duration-300 ${
+                                location.pathname === subItem.path
+                                  ? 'bg-gold text-white'
+                                  : (scrolled ? 'text-ink/60 hover:bg-gold/5 hover:text-gold' : 'text-white/60 hover:bg-white/5 hover:text-white')
+                              }`}
+                            >
+                              {subItem.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                )}
+              </div>
             ))}
             <Link
               to="/contact"
@@ -88,9 +135,20 @@ export const Navbar = () => {
             <div className="flex flex-col gap-6">
               <Link to="/" className="serif text-3xl text-ink">Home</Link>
               {navItems.map((item) => (
-                <Link key={item.name} to={item.path} className="serif text-3xl text-ink">
-                  {item.name}
-                </Link>
+                <div key={item.name} className="flex flex-col gap-4">
+                  <Link to={item.path} className="serif text-3xl text-ink">
+                    {item.name}
+                  </Link>
+                  {item.dropdown && (
+                    <div className="flex flex-col gap-4 pl-6 border-l border-gold/20">
+                      {item.dropdown.map((subItem) => (
+                        <Link key={subItem.name} to={subItem.path} className="serif text-xl text-ink/60">
+                          {subItem.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ))}
             </div>
           </motion.div>

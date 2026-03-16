@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Star, Quote, MessageSquare } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { SectionTitle, PageHeader, MicroLabel } from '../components/UI';
 
 const testimonials = [
@@ -141,12 +142,12 @@ export const Testimonials = () => {
             <p className="text-white/40 text-xl font-light mb-16">
               Recently traveled with us? We'd love to hear about your experience. Your feedback helps us perfect the art of Himalayan hospitality.
             </p>
-            <a 
-              href="/contact" 
-              className="px-12 py-6 bg-gold text-white rounded-full font-black uppercase tracking-[0.3em] text-[10px] hover:bg-white hover:text-ink transition-all duration-700 shadow-[0_20px_40px_rgba(197,160,89,0.2)]"
+            <Link 
+              to="/feedback" 
+              className="px-12 py-6 bg-gold text-white rounded-full font-black uppercase tracking-[0.3em] text-[10px] hover:bg-white hover:text-ink transition-all duration-700 shadow-[0_20px_40px_rgba(197,160,89,0.2)] inline-block"
             >
               Send Your Feedback
-            </a>
+            </Link>
           </div>
         </motion.div>
       </div>
