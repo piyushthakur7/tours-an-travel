@@ -189,55 +189,122 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-32 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
-          <SectionTitle 
-            subtitle="Voices of the Valley" 
-            title="What Our Guests Say" 
-          />
-          
-          <div className="grid md:grid-cols-3 gap-12">
-            {[
-              {
-                name: "Anjali Sharma",
-                role: "Adventurer",
-                content: "The trip to Sinthan Top was absolutely magical. The team handled everything perfectly, and the views were beyond words.",
-                image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&h=150&fit=crop"
-              },
-              {
-                name: "Rahul Verma",
-                role: "Photography Enthusiast",
-                content: "Expert local knowledge! They took us to spots that aren't on the usual tourist map. Highly recommend their photography package.",
-                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&h=150&fit=crop"
-              },
-              {
-                name: "Sarah Jenkins",
-                role: "Solo Traveler",
-                content: "Safe, welcoming, and professional. As a solo traveler, I felt completely at ease. Truly the best way to see Kashmir.",
-                image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=150&h=150&fit=crop"
-              }
-            ].map((testimonial, idx) => (
-              <motion.div 
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.2 }}
-                className="relative p-8 border border-ink/5 rounded-3xl hover:border-gold/30 transition-all duration-500 group"
-              >
-                <div className="absolute -top-6 left-8 w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-xl">
-                  <img src={testimonial.image} alt={testimonial.name} className="w-full h-full object-cover" />
-                </div>
-                <p className="mt-8 text-ink/70 font-light italic leading-relaxed mb-6">
-                  "{testimonial.content}"
-                </p>
-                <div>
-                  <h4 className="serif text-xl text-ink group-hover:text-gold transition-colors">{testimonial.name}</h4>
-                  <p className="text-[10px] uppercase tracking-widest text-ink/40 font-bold">{testimonial.role}</p>
-                </div>
-              </motion.div>
-            ))}
+      {/* Testimonials - Editorial Layout */}
+      <section className="py-48 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-10">
+          <div className="grid lg:grid-cols-12 gap-24 items-start">
+            <div className="lg:col-span-4 sticky top-40">
+              <div className="flex items-center gap-4 mb-8">
+                <span className="w-12 h-[1px] bg-gold"></span>
+                <MicroLabel className="text-gold mb-0">Guest Experiences</MicroLabel>
+              </div>
+              <h2 className="serif text-6xl md:text-7xl font-extralight leading-[0.85] text-ink mb-12 tracking-tight">
+                Voices of <br /><span className="italic text-gold">the Valley</span>
+              </h2>
+              <p className="text-ink/40 text-xl font-light leading-relaxed mb-12">
+                "We don't just provide tours; we curate life-long memories. Our guests are our greatest storytellers."
+              </p>
+              <div className="flex gap-4">
+                 <div className="flex -space-x-4">
+                   {[1,2,3,4].map(i => (
+                     <div key={i} className="w-12 h-12 rounded-full border-4 border-white overflow-hidden bg-paper">
+                       <img src={`https://i.pravatar.cc/100?img=${i+10}`} alt="Guest" />
+                     </div>
+                   ))}
+                 </div>
+                 <div className="text-ink">
+                    <p className="text-sm font-bold tracking-widest mt-1">2,000+</p>
+                    <p className="text-[9px] uppercase tracking-widest text-ink/40">Happy Explorers</p>
+                 </div>
+              </div>
+            </div>
+
+            <div className="lg:col-span-8 space-y-12">
+              {[
+                {
+                  name: "Anjali Sharma",
+                  role: "Adventurer",
+                  content: "The trip to Sinthan Top was absolutely magical. The team handled everything perfectly, and the views were beyond words. Truly a signature experience.",
+                  image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&h=200&fit=crop"
+                },
+                {
+                  name: "Rahul Verma",
+                  role: "Photography Enthusiast",
+                  content: "Expert local knowledge! They took us to spots that aren't on the usual tourist map. Their cinematography package is world-class.",
+                  image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&h=200&fit=crop"
+                },
+                {
+                  name: "Sarah Jenkins",
+                  role: "Solo Traveler",
+                  content: "Safe, welcoming, and professional. As a solo traveler, I felt completely at ease. The heritage houseboat was the highlight of my year.",
+                  image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&h=200&fit=crop"
+                }
+              ].map((testimonial, idx) => (
+                <motion.div 
+                  key={idx}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1, duration: 1 }}
+                  className="group p-12 bg-paper rounded-[3.5rem] border border-black/5 hover:border-gold/30 hover:shadow-[0_40px_80px_rgba(0,0,0,0.03)] transition-all duration-700 relative overflow-hidden"
+                >
+                  <div className="absolute top-0 right-0 w-40 h-40 bg-gold/5 blur-[80px] rounded-full -z-10 transition-all duration-700 group-hover:bg-gold/10"></div>
+                  <p className="serif text-3xl text-ink/70 font-light leading-relaxed mb-10 italic">
+                    "{testimonial.content}"
+                  </p>
+                  <div className="flex items-center gap-6">
+                    <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white shadow-xl transition-transform duration-500 group-hover:scale-110">
+                      <img src={testimonial.image} alt={testimonial.name} className="w-full h-full object-cover" />
+                    </div>
+                    <div>
+                      <h4 className="serif text-2xl text-ink group-hover:text-gold transition-colors">{testimonial.name}</h4>
+                      <p className="text-[10px] uppercase tracking-[0.3em] text-ink/30 font-black mt-1">{testimonial.role}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Social Media Immersion */}
+      <section className="py-40 bg-ink relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] h-[150vw] bg-gold/20 blur-[200px] rounded-full"></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-10 relative z-10 text-center">
+          <div className="flex flex-col items-center max-w-2xl mx-auto">
+            <span className="w-1px h-20 bg-gold/30 mb-8"></span>
+            <MicroLabel className="text-gold">Stay Connected</MicroLabel>
+            <h2 className="serif text-6xl md:text-8xl font-extralight text-white mb-12 tracking-tighter">Follow the <br /><span className="italic text-gold">Odyssey</span></h2>
+            <p className="text-white/40 text-xl font-light leading-relaxed mb-16">
+              Join our community for daily inspirations from the heights of the Himalayas and the heart of the valley.
+            </p>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 w-full max-w-4xl">
+              {[
+                { icon: Instagram, label: "Instagram", id: "@kashmir_sinthan_top", href: "https://www.instagram.com/kashmir_sinthan_top/" },
+                { icon: Facebook, label: "Facebook", id: "Kashmir Sinthan Top", href: "https://www.facebook.com/kashmirsinthantop/" },
+                { icon: Youtube, label: "Youtube", id: "Kashmir Sinthan Top", href: "https://www.youtube.com/@KashmirSinthanTop" },
+                { icon: ArrowRight, label: "Blog", id: "Travel Chronicles", href: "#" }
+              ].map((social, i) => (
+                <a 
+                  key={i}
+                  href={social.href} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="group p-10 bg-white/5 backdrop-blur-3xl rounded-[2.5rem] border border-white/5 hover:border-gold/30 transition-all duration-700"
+                >
+                  <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-ink transition-all duration-500 mb-8 transform group-hover:-rotate-12 mx-auto">
+                    <social.icon size={24} />
+                  </div>
+                  <p className="text-[9px] uppercase tracking-[0.3em] text-white/30 font-black mb-1">{social.label}</p>
+                  <p className="text-[11px] text-white/70 group-hover:text-white transition-colors truncate">{social.id}</p>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </section>

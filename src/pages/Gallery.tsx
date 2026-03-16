@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { PageHeader } from '../components/UI';
+import { PageHeader, MicroLabel } from '../components/UI';
 import { X, Maximize2 } from 'lucide-react';
 
 const images = [
@@ -56,26 +56,45 @@ export const Gallery = () => {
         bgImage={`/${images[0]}`}
       />
       
-      <div className="max-w-7xl mx-auto px-6 py-24">
-        <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+      <div className="max-w-7xl mx-auto px-10 py-40">
+        <div className="mb-24 text-center max-w-3xl mx-auto">
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <span className="w-12 h-[1px] bg-gold"></span>
+            <MicroLabel className="text-gold mb-0">Captured Moments</MicroLabel>
+            <span className="w-12 h-[1px] bg-gold"></span>
+          </div>
+          <h2 className="serif text-6xl md:text-8xl font-extralight text-ink mb-10 tracking-tight leading-[0.85]">
+             The Himalayan <br /><span className="italic text-gold">Perspective</span>
+          </h2>
+          <p className="text-ink/40 text-xl font-light leading-relaxed">
+             A curated anthology of landscapes, local encounters, and the raw beauty of the Sinthan Top summit.
+          </p>
+        </div>
+
+        <div className="columns-1 md:columns-2 lg:columns-3 gap-12 space-y-12">
           {images.map((img, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: (index % 10) * 0.1 }}
-              className="relative group cursor-pointer overflow-hidden rounded-2xl bg-ink/5"
+              transition={{ duration: 1.2, delay: (index % 6) * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              className="relative group cursor-pointer overflow-hidden rounded-[2.5rem] bg-paper shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_40px_80px_rgba(0,0,0,0.1)] transition-all duration-700"
               onClick={() => setSelectedImage(img)}
             >
               <img
                 src={`/${img}`}
-                alt={`Kashmir Gallery ${index + 1}`}
-                className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                alt={`Kashmir Odyssey ${index + 1}`}
+                className="w-full h-auto object-cover transition-transform duration-1000 group-hover:scale-110"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-ink/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <Maximize2 className="text-white" size={24} />
+              <div className="absolute inset-0 bg-ink/40 opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex flex-col items-center justify-center backdrop-blur-[2px]">
+                <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-xl flex items-center justify-center text-white scale-90 group-hover:scale-100 transition-transform duration-500">
+                  <Maximize2 size={28} />
+                </div>
+                <p className="text-[10px] uppercase tracking-[0.4em] text-white font-black mt-6 opacity-0 group-hover:opacity-100 transition-all duration-700 translate-y-4 group-hover:translate-y-0">
+                   Enlarge Frame
+                </p>
               </div>
             </motion.div>
           ))}
