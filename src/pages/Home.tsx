@@ -2,6 +2,7 @@ import React from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { Instagram, Facebook, Youtube, ArrowRight, MapPin, Compass } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { MicroLabel, SectionTitle, PackageCard } from '../components/UI';
 
 export const Home = () => {
@@ -10,6 +11,10 @@ export const Home = () => {
 
   return (
     <div className="bg-paper selection:bg-gold selection:text-white">
+      <Helmet>
+        <title>Kashmir Sinthan Top Tour & Travel | Official Website</title>
+        <meta name="description" content="Experience the ultimate Kashmir journey with Sinthan Top specialists. We provide complete tour packages, luxury hotels, houseboats, and professional cinematography." />
+      </Helmet>
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-ink">
         <motion.div style={{ y: y1 }} className="absolute inset-0 z-0 scale-110">
